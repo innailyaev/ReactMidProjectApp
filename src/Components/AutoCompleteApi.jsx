@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useRef } from 'react';
 import axios from 'axios';
 
 
@@ -6,6 +6,7 @@ const AutoCompleteApi = ({q}) => {
 
 const [AutoCompleteApi,setAutoCompleteApi]=useState([]);
 const [search,setSearch]=useState('');
+const divRef=useRef();
 
 const getApi = async () => {
     try{
@@ -34,6 +35,10 @@ const searchResults =()=>{
     q(search);
 }
 
+const clickHandler=()=>{
+    console.log(divRef.current);
+}
+
     return (
       <div>
           <input type="search" onChange={changeHandler}/>
@@ -41,9 +46,10 @@ const searchResults =()=>{
           
           { (AutoCompleteApi==null) ? (<h3>Loading...</h3>) : (
               AutoCompleteApi.map((f,index)=>{
-                  return<option key={index}>{f}</option>
+                  return<div ref={divRef} key={index} onClick={() => clickHandler()}>{f}</div>
               })
-          ) }      
+          ) }  
+            
        
                
       </div>
