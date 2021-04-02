@@ -4,20 +4,17 @@ import axios from 'axios';
 
 const AutoCompleteApi = ({q}) => {
 
-const [msg,setMsg]=useState('none');
 const [AutoCompleteApi,setAutoCompleteApi]=useState([]);
 const [search,setSearch]=useState('');
 
 const getApi = async () => {
     try{
-        setMsg('none');
         const response= await axios.get(`http://api.edamam.com/auto-complete?q=${search}&limit=10&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
         console.log(response);
         setAutoCompleteApi(response.data)
        
     }catch(err){
             console.log(err); 
-            setMsg('block');
     }
 }
 
