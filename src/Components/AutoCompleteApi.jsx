@@ -41,15 +41,15 @@ const clickHandler=()=>{
 
     return (
       <div>
-          <input type="search" onChange={changeHandler}/>
-          <input type="button" value="Search" onClick={searchResults}/>
-          
+        <input list="food" type="search" onChange={changeHandler}/>
+        <input type="button" value="Search" onClick={searchResults}/>
+        <datalist id="food">
           { (AutoCompleteApi==null) ? (<h3>Loading...</h3>) : (
               AutoCompleteApi.map((f,index)=>{
-                  return<div ref={divRef} key={index} onClick={() => clickHandler()}>{f}</div>
+                  return<option  ref={divRef} key={index} onClick={() => clickHandler()} value={f}>{f}</option >
               })
           ) }  
-            
+        </datalist>  
        
                
       </div>
