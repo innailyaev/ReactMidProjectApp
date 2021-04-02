@@ -17,7 +17,7 @@ const getApi= async () => {
         setMsg('none');
         const response = await axios.get(`https://api.edamam.com/api/food-database/v2/parser?nutrition-type=&ingr=${query}&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
         console.log(response.data.hints);
-        setFoodApi(response.data.hints)
+        setFoodApi(response.data.parsed)
        
     }catch(err){
             console.log(err); 
