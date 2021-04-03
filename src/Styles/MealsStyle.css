@@ -1,5 +1,12 @@
 .mealsContainer{
     display: flex;
+    justify-content: space-evenly;
+}
+
+.mealTypeContainer{
+border: solid black;
+height: 800px;
+width: 410px;
 }
 
 table,
@@ -11,4 +18,11 @@ thead,
 tfoot {
     background-color: #333;
     color: #fff;
+}
+
+.imgMeal{
+    position: absolute;
+    background-size: contain;
+    width: 400px;
+    height: 400px;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../Styles/MealsStyle.css';
 import PopUp from "./PopUpWindow";
+import Data from "./Data";
 
 const Meals = ({title,imgSrc}) => {
 
@@ -11,7 +12,7 @@ const Meals = ({title,imgSrc}) => {
       setPopUpSeen(!popUpSeen);
   };
 
-  const setFoodArrFunc = (chosenFoodArr) => {
+  const setFoodArrFunc = (dataFoodArr) => {
     // if(localStorage.getItem('foodArr')){
     //   setFoodArr(JSON.parse(localStorage.getItem('foodArr')));
     // }
@@ -19,14 +20,18 @@ const Meals = ({title,imgSrc}) => {
     //   setFoodArr(chosenFoodArr);
     // }
     // localStorage.setItem('foodArr', JSON.stringify(chosenFoodArr));
+    setFoodArr(dataFoodArr);
     console.log("meals",foodArr);
-    setFoodArr(chosenFoodArr);
-
 };
+
+const rowClickHandler=(index)=>{
+  console.log(foodArr[index].label);
+  console.log(foodArr[index].fat);
+}
 
   return (
     
-      <div>
+      <div className="mealTypeContainer">
         <table>
             <thead>
                 <tr>
@@ -40,7 +45,7 @@ const Meals = ({title,imgSrc}) => {
             <tbody>
               {
                 foodArr.map((x,index)=>(
-                   <tr key={index}>
+                   <tr key={index} onClick={() => rowClickHandler(index)}>
                      <td>{x.label}</td>
                      <td>{x.calories}</td>
                    </tr>
@@ -48,9 +53,9 @@ const Meals = ({title,imgSrc}) => {
               }   
             </tbody>
       </table>
-          <img src={imgSrc} alt=""  width="400"/>
+          <img className="imgMeal" src={imgSrc} alt=""/>
           {
-            popUpSeen ? <PopUp toggle={togglePop} foodArr={setFoodArrFunc}/> : null
+            popUpSeen ? <PopUp toggle={togglePop} content={<Data dataFoodArr={setFoodArrFunc} addbtn={togglePop}/>}/> : null
           }  
       </div>
     );

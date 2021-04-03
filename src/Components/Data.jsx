@@ -3,23 +3,27 @@ import axios from 'axios';
 import AutoCompleteApi from "./AutoCompleteApi";
 import '../Styles/DataStyle.css';
 
+
 let foodInfoArr=[];
+const FoodDataBaseAPI = ({dataFoodArr,addbtn}) => {
 
-const FoodDataBaseAPI = ({foodArr}) => {
-
+console.log("start function food data base");
 const [foodApi,setFoodApi]=useState([]);
 const [measuresApi,setMeasuresApi]=useState([]);
+const [foodArray,setFoodArr]=useState([]);
 const [query,setQuery]=useState('rou');
 const [calories,setCalories]=useState(0);
 let chosenCal;
 
 const getApi= async () => {
+   
+    console.log("getApi");
     try{
         const response = await axios.get(`https://api.edamam.com/api/food-database/v2/parser?nutrition-type=&ingr=${query}&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
         console.log(response.data.parsed);
         setFoodApi(response.data.parsed);
         setMeasuresApi(response.data.hints[0].measures);
-        setCalories(response.data.parsed[0].food.nutrients.ENERC_KCAL)
+        setCalories(response.data.parsed[0].food.nutrients.ENERC_KCAL);
        
     }catch(err){
             console.log(err); 
@@ -27,6 +31,7 @@ const getApi= async () => {
 }
 
 useEffect(()=>{
+    console.log("rander")
     getApi();
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[query]);
@@ -44,13 +49,12 @@ const searchResults =(search)=>{
 }
 
 const checkboxHandler=(index)=>{
-    console.log(index);
     chosenCal=measuresApi[index].weight/100*calories;
-    console.log(chosenCal.toFixed(2));
     addHandler(chosenCal);
 }
 
 const addHandler=(cal)=>{
+    
     let foodObj={
         label:foodApi[0].food.label,
         foodId:foodApi[0].food.foodId,
@@ -63,14 +67,15 @@ const addHandler=(cal)=>{
     }
 
     foodInfoArr.push(foodObj);
-    console.log(foodInfoArr);
+    setFoodArr(foodInfoArr);
+    console.log("data",foodInfoArr);
     
 }
 
 const addClickHandler=()=>{
-    foodArr(foodInfoArr);
+    dataFoodArr(foodArray);
+    addbtn();
 }
-
 
     return (
       <div>
