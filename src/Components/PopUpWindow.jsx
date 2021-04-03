@@ -17,7 +17,7 @@ const setArr=(chosenFoodArr)=>{
   return (
     <div className="modal">
         <div className="modalContent">
-            <span className="close" onClick={handleClick}>&times;    </span>
+            <span className="close" onClick={handleClick}>&times;</span>
             <p>I'm A Pop Up!!!</p>
             <Data foodArr={setArr}/>
         </div>

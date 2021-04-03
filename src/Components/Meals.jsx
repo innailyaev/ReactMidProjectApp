@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Styles/MealsStyle.css';
 import PopUp from "./PopUpWindow";
 
-const Meals = ({title,imgSrc,}) => {
+const Meals = ({title,imgSrc}) => {
 
   const [popUpSeen,setPopUpSeen] = useState(false);
   const [foodArr,setFoodArr] = useState([]);
@@ -12,14 +12,16 @@ const Meals = ({title,imgSrc,}) => {
   };
 
   const setFoodArrFunc = (chosenFoodArr) => {
-    if(localStorage.getItem('foodArr')){
-      setFoodArr(JSON.parse(localStorage.getItem('foodArr')));
-    }
-    else{
-      setFoodArr(chosenFoodArr);
-    }
-    localStorage.setItem('foodArr', JSON.stringify(chosenFoodArr));
+    // if(localStorage.getItem('foodArr')){
+    //   setFoodArr(JSON.parse(localStorage.getItem('foodArr')));
+    // }
+    // else{
+    //   setFoodArr(chosenFoodArr);
+    // }
+    // localStorage.setItem('foodArr', JSON.stringify(chosenFoodArr));
     console.log("meals",foodArr);
+    setFoodArr(chosenFoodArr);
+
 };
 
   return (
@@ -28,7 +30,7 @@ const Meals = ({title,imgSrc,}) => {
         <table>
             <thead>
                 <tr>
-                    <th colSpan="2">{title}<button onClick={togglePop} >+</button></th>
+                    <th colSpan="2">{title}<button onClick={togglePop}>+</button></th>
                 </tr>
                 <tr>
                     <th style={{width:'300px'}}>SERVING</th>
@@ -46,9 +48,9 @@ const Meals = ({title,imgSrc,}) => {
               }   
             </tbody>
       </table>
-          <img src={imgSrc} alt="" width="400"/>
+          <img src={imgSrc} alt=""  width="400"/>
           {
-            popUpSeen ?  <PopUp toggle={togglePop} foodArr={setFoodArrFunc}/> : null
+            popUpSeen ? <PopUp toggle={togglePop} foodArr={setFoodArrFunc}/> : null
           }  
       </div>
     );

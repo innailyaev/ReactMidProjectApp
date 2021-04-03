@@ -1,4 +1,6 @@
-
+.mealsContainer{
+    display: flex;
+}
 
 table,
 td {
