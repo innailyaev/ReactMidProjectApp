@@ -11,7 +11,6 @@ const divRef=useRef();
 const getApi = async () => {
     try{
         const response= await axios.get(`http://api.edamam.com/auto-complete?q=${search}&limit=10&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
-        console.log(response);
         setAutoCompleteApi(response.data)
        
     }catch(err){
@@ -26,12 +25,10 @@ useEffect(()=>{
   
 
 const changeHandler=(e)=>{
-    console.log(e.target.value);
     setSearch(e.target.value);
 }
 
 const searchResults =()=>{
-    console.log(search);
     q(search);
 }
 

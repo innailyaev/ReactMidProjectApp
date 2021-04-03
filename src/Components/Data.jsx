@@ -2,26 +2,22 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AutoCompleteApi from "./AutoCompleteApi";
 import '../Styles/DataStyle.css';
+let foodInfoArr=[];
 
-const FoodDataBaseAPI = () => {
+const FoodDataBaseAPI = ({foodArr}) => {
 
-const [msg,setMsg]=useState('none');
 const [foodApi,setFoodApi]=useState([]);
 const [query,setQuery]=useState('rou');
 // const [search,setSearch]=useState('');
-const [chosenFood,setChosenFood]=useState();
-
 
 const getApi= async () => {
     try{
-        setMsg('none');
         const response = await axios.get(`https://api.edamam.com/api/food-database/v2/parser?nutrition-type=&ingr=${query}&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
-        console.log(response.data.hints);
+        console.log(response.data.parsed);
         setFoodApi(response.data.parsed)
        
     }catch(err){
             console.log(err); 
-            setMsg('block');
     }
 }
 
@@ -42,9 +38,23 @@ const searchResults =(search)=>{
     setQuery(search);  
 }
 
-const clickHandler=(index)=>{
+
+const addHandler=(index)=>{
     console.log(index);
-    setChosenFood(index);
+    let foodObj={
+        label:foodApi[index].food.label,
+        foodId:foodApi[index].food.foodId,
+        foodImg:foodApi[index].food.image,
+        calories:foodApi[index].food.nutrients.ENERC_KCAL,
+        fat:foodApi[index].food.nutrients.FAT,
+        fibers:foodApi[index].food.nutrients.FIBTG,
+        protein:foodApi[index].food.nutrients.PROCNT,
+        carbs:foodApi[index].food.nutrients.CHOCDF,
+    }
+
+    foodInfoArr.push(foodObj);
+    console.log(foodInfoArr);
+    foodArr(foodInfoArr);
 }
 
 
@@ -55,7 +65,7 @@ const clickHandler=(index)=>{
         <AutoCompleteApi q={searchResults} />
         { (foodApi==null) ? (<h3>Loading...</h3>) : (
               foodApi.map((f,index)=>{
-                  return<div className="foodTypes" key={index} onClick={() => clickHandler(index)}><img src={f.food.image} alt="" height="40"/>{f.food.label}</div>
+                  return<div className="foodTypes" key={index}><img src={f.food.image} alt="" height="40"/>{f.food.label}<button onClick={() => addHandler(index)}>ADD</button></div>
               })
           ) }               
       </div>
