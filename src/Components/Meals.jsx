@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../Styles/MealsStyle.css';
 import PopUp from "./PopUpWindow";
 import Data from "./Data";
-let foodArray;
+
 
 const Meals = ({title,imgSrc}) => {
 
@@ -14,10 +14,6 @@ const Meals = ({title,imgSrc}) => {
       setPopUpSeen(!popUpSeen);
   };
 
-  useEffect(()=>{
-    console.log("meals once");
-    foodArray=[];
-  },[]);
 
   const setFoodArrFunc = (chosenfoodInfo) => {
     // if(localStorage.getItem('foodArr')){
@@ -27,11 +23,11 @@ const Meals = ({title,imgSrc}) => {
     //   setFoodArr(chosenFoodArr);
     // }
     // localStorage.setItem('foodArr', JSON.stringify(chosenFoodArr));
+    
     let counter=0;
-    foodArray.push(chosenfoodInfo);
-    setAllChosenArr(foodArray);
+    setAllChosenArr([chosenfoodInfo, ...allChosenArr]);
     console.log("meals",allChosenArr);
-    foodArray.map((x)=>{
+    allChosenArr.map((x)=>{
       return counter+=x.calories;
     })
     setTotalCalories(counter.toFixed(2));
@@ -60,7 +56,7 @@ const rowClickHandler=(index)=>{
                 allChosenArr.map((x,index)=>(
                    <tr key={index} onClick={() => rowClickHandler(index)}>
                      <td>{x.label}</td>
-                     <td>{x.calories}</td>
+                     <td>{x.calories.toFixed(2)}</td>
                    </tr>
                 ))  
               }   
