@@ -1,5 +1,10 @@
-
 .bmiContainer{
+    display: flex;
+    height: 500px;
+    width: 700px;
+}
+
+.formContainer{
     height: 500px;
     width: 500px;
     display: flex;
@@ -41,6 +46,11 @@ h1{
     color: red;
 }
 
+.bmiResult{
+    
+    font-size: 20px;
+}
+
 .slider {
     -webkit-appearance: none;
     width: 80%;
@@ -53,23 +63,23 @@ h1{
     border-radius: 10px;
   }
   
-  .slider:hover {
+.slider:hover {
     opacity: 1;
-  }
+}
   
-  .slider::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 40px;
     width: 25px;
     height: 25px;
-    background: #28af6c;
+    background: #34d8e7;
     cursor: pointer;
-  }
+}
   
-  .slider::-moz-range-thumb {
+.slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
     background: #4CAF50;
     cursor: pointer;
-  }
+}

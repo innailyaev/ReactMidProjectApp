@@ -10,6 +10,8 @@ const CalcBMI = () => {
   const [overToggle,setOverToggle]=useState(false);
   const [lessToggle,setlessToggle]=useState(false);
   const [bmiRange,setBmiRange]=useState('');
+  const [bmiScale,setBmiScale] = useState([18.5,25,30,40])
+  const [bmiInfoArr,setBmiInfoArr] = useState([]);
 
   const heightHandler=(e)=>{
     console.log(e.target.value);
@@ -44,22 +46,31 @@ const CalcBMI = () => {
   const bmiClickHandler=()=>{
     let result= (weight)/(height/100*height/100);
     setBMI(result.toFixed(2));
-    if(result<=18.5)
+    if(result <= 18.5)
       setBmiRange('Underweight');
-    else if(result >18.5 & result <= 25)
+    else if(result > 18.5 & result < 25)
       setBmiRange('Normal Weight');
-    else if(result >25 & result <=30)
+    else if(result >= 25 & result < 30)
       setBmiRange('Overweight');
-    else if(result >30 & result <=40)
+    else if(result >= 30 & result < 40)
       setBmiRange('Obese level 1');
-    else if(result >40)
+    else if(result >= 40)
       setBmiRange('Obese level 2');
+
+    let arr=[];
+    arr=bmiScale.map((x)=>{
+      return ((height/100*height/100)*x).toFixed(1);
+    })
+
+    setBmiInfoArr(arr);
   }
 
     return (
-      <div>
-          <h1>BMI Calculator</h1>
-          <div className="bmiContainer">
+      <div >
+        
+      <h1>BMI Calculator</h1>
+        <div className="bmiContainer">
+          <div className="formContainer">
             <form onSubmit={formSubmit} className="form">
               <label>Height</label>
               <input type="text" onChange={heightHandler}/>
@@ -69,10 +80,18 @@ const CalcBMI = () => {
               <input type="text" onChange={weightHandler}/>
               <Button click={bmiClickHandler} content={'Calc BMI'}/>
             </form>   
-            <div>Your BMI is: {BMI} {bmiRange}</div>
-            <input readOnly type="range" min="18.5" max="40" value={BMI} className="slider" id="myRange"/>
+            <div className="bmiResult">Your BMI is: {BMI} {bmiRange}</div>
+            <input readOnly type="range" min="18" max="45" value={BMI} className="slider" id="myRange"/>
             </div> 
-          
+
+            <div>
+                <p><span>Underweight (less 18.5)</span> {bmiInfoArr[0]}</p>
+                <p><span>Normal Weight (18.5-25)</span> {bmiInfoArr[0]} - {bmiInfoArr[1]}</p>
+                <p><span>Overweight (25-30)</span> {bmiInfoArr[1]} - {bmiInfoArr[2]}</p>
+                <p><span>Obese level 1 (30-40)</span> {bmiInfoArr[2]} - {bmiInfoArr[3]}</p>
+                <p><span>Obese level 2 (above 40)</span> {bmiInfoArr[3]}</p>              
+            </div>
+          </div>
       </div>
     );
 };
