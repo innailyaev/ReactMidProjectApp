@@ -10,8 +10,8 @@ const CalcBMI = () => {
   const [overToggle,setOverToggle]=useState(false);
   const [lessToggle,setlessToggle]=useState(false);
   const [bmiRange,setBmiRange]=useState('');
-  const [bmiScale,setBmiScale] = useState([18.5,25,30,40])
-  const [bmiInfoArr,setBmiInfoArr] = useState([]);
+  const [bmiInfoArr,setBmiInfoArr] = useState([0,0,0,0]);
+  const bmiScale = [18.5,25,30,40];
 
   const heightHandler=(e)=>{
     console.log(e.target.value);
@@ -61,14 +61,14 @@ const CalcBMI = () => {
     arr=bmiScale.map((x)=>{
       return ((height/100*height/100)*x).toFixed(1);
     })
-
     setBmiInfoArr(arr);
   }
 
     return (
-      <div >
+      <div className="bmiMain">
         
       <h1>BMI Calculator</h1>
+      <h2>Body mass index</h2>
         <div className="bmiContainer">
           <div className="formContainer">
             <form onSubmit={formSubmit} className="form">
@@ -80,18 +80,20 @@ const CalcBMI = () => {
               <input type="text" onChange={weightHandler}/>
               <Button click={bmiClickHandler} content={'Calc BMI'}/>
             </form>   
-            <div className="bmiResult">Your BMI is: {BMI} {bmiRange}</div>
+            <div className="bmiResult">Your BMI is: <span>{BMI}</span> {bmiRange}</div>
             <input readOnly type="range" min="18" max="45" value={BMI} className="slider" id="myRange"/>
             </div> 
 
-            <div>
-                <p><span>Underweight (less 18.5)</span> {bmiInfoArr[0]}</p>
+            <div className="bmiInfoDiv">
+                <p><span>Underweight (Below 18.5)</span> {bmiInfoArr[0]}</p>
                 <p><span>Normal Weight (18.5-25)</span> {bmiInfoArr[0]} - {bmiInfoArr[1]}</p>
                 <p><span>Overweight (25-30)</span> {bmiInfoArr[1]} - {bmiInfoArr[2]}</p>
                 <p><span>Obese level 1 (30-40)</span> {bmiInfoArr[2]} - {bmiInfoArr[3]}</p>
-                <p><span>Obese level 2 (above 40)</span> {bmiInfoArr[3]}</p>              
+                <p><span>Obese level 2 (Above 40)</span> {bmiInfoArr[3]}</p>              
             </div>
+            <a className="moreInfoTag" href="https://en.wikipedia.org/wiki/Body_mass_index"  target="blank">More information</a>
           </div>
+         
       </div>
     );
 };

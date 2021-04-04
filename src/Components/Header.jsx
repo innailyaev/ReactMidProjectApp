@@ -11,7 +11,7 @@ export default class Header extends React.Component{
 
     render(){
         return(
-            <Menu pointing secondary>
+            <Menu pointing secondary style={{margin:'0'}}>
                <Menu.Item name="homepage"><Link to="/" >Homepage</Link></Menu.Item> 
                <Menu.Item name="mymeals"><Link to="/mymeals" >My Meals</Link></Menu.Item>
                <Menu.Item name="bmi"><Link to="/bmi" >BMI</Link></Menu.Item>  

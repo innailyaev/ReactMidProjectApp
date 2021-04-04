@@ -1,7 +1,19 @@
+.bmiMain{
+    height: 95vh;
+    background-image: url('../Assets/bmiNutrition.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
 .bmiContainer{
+    font-family: 'Rancho', cursive;
     display: flex;
     height: 500px;
-    width: 700px;
+    position: absolute;
+    right: 0;
+    top:250px;
+    font-size: 35px;
 }
 
 .formContainer{
@@ -11,24 +23,31 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border:solid black;
+    border-right: solid thin #1a759f;
+}
+
+.bmiInfoDiv{
+    width: 500px;
+    text-align: center;
+    padding-top: 30px;
 }
 
 .form{
-    font-size: 20px;
-    height: 200px;
     display: flex;
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    width: 400px;
 }
 
 .form input{
     margin-bottom: 30px;
     margin-top: 10px;
+    font-size: 25px;
+    text-align: center;
     border: none;
     border-bottom: solid #1a759f;
+    width: 200px;
+    background: transparent;
 }
 
 input:focus{
@@ -37,18 +56,33 @@ input:focus{
 
 h1{
     font-family: 'Rancho', cursive;
-    font-size: 80px;
+    font-size: 90px;
     text-align: center;
     color:#83c5be;
 }
 
-.textToggle{
-    color: red;
+h2{
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    text-align: center;
+    color:#1a759f;  
 }
 
-.bmiResult{
-    
-    font-size: 20px;
+.textToggle{
+    color: red;
+    font-size: 1.5rem;
+}
+
+span{
+    color: #76c893;
+    padding-right: 10px;
+}
+
+.moreInfoTag{
+    position: absolute;
+    top: 550px;
+    right: 430px;
+    text-decoration: underline;
 }
 
 .slider {
@@ -77,9 +111,9 @@ h1{
     cursor: pointer;
 }
   
-.slider::-moz-range-thumb {
+/* .slider::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    background: #4CAF50;
+    background: #76c893;
     cursor: pointer;
-}
+} */
