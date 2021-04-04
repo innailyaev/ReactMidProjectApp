@@ -1,0 +1,75 @@
+
+.bmiContainer{
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border:solid black;
+}
+
+.form{
+    font-size: 20px;
+    height: 200px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+}
+
+.form input{
+    margin-bottom: 30px;
+    margin-top: 10px;
+    border: none;
+    border-bottom: solid #1a759f;
+}
+
+input:focus{
+    outline: none;
+}
+
+h1{
+    font-family: 'Rancho', cursive;
+    font-size: 80px;
+    text-align: center;
+    color:#83c5be;
+}
+
+.textToggle{
+    color: red;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 25px;
+    background: linear-gradient(to right, blue,green,yellow,orange,red);
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 10px;
+  }
+  
+  .slider:hover {
+    opacity: 1;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 40px;
+    width: 25px;
+    height: 25px;
+    background: #28af6c;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+  }
