@@ -13,8 +13,8 @@ export default class Header extends React.Component{
         return(
             <Menu pointing secondary>
                <Menu.Item name="homepage"><Link to="/" >Homepage</Link></Menu.Item> 
-               <Menu.Item name="mymeals"><Link to="/mymeals" >mymeals</Link></Menu.Item>
-               <Menu.Item name="bmi"><Link to="/bmi" >bmi</Link></Menu.Item>  
+               <Menu.Item name="mymeals"><Link to="/mymeals" >My Meals</Link></Menu.Item>
+               <Menu.Item name="bmi"><Link to="/bmi" >BMI</Link></Menu.Item>  
             </Menu>
         )
     }
