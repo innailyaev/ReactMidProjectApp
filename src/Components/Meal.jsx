@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../Styles/MealsStyle.css';
 import PopUp from "./PopUpWindow";
 import Data from "./Data";
@@ -24,9 +24,9 @@ const Meals = ({title,imgSrc}) => {
     // }
     // localStorage.setItem('foodArr', JSON.stringify(chosenFoodArr));
     
-    let counter=0;
+    let counter=chosenfoodInfo.calories;
     setAllChosenArr([chosenfoodInfo, ...allChosenArr]);
-    console.log("meals",allChosenArr);
+    console.log("meals",allChosenArr,chosenfoodInfo.calories);
     allChosenArr.map((x)=>{
       return counter+=x.calories;
     })

@@ -1,5 +1,5 @@
 import React from 'react';
-import Meals from "./Meals";
+import Meal from "./Meal";
 import "../Styles/MealsStyle.css";
 import BreakfastImg from "../Assets/breakfast.jpg";
 import LunchImg from "../Assets/lunch.jpeg";
@@ -12,10 +12,10 @@ const MyMeals = () => {
 
     return (
       <div className="mealsContainer">
-           <Meals title="BREAKFAST" imgSrc={BreakfastImg} />
-           <Meals title="LUNCH" imgSrc={LunchImg}/>
-           <Meals title="DINNER" imgSrc={Dinner}/>  
-           <Meals title="SNACKS" imgSrc={Snacks}/>  
+           <Meal title="BREAKFAST" imgSrc={BreakfastImg} />
+           <Meal title="LUNCH" imgSrc={LunchImg}/>
+           <Meal title="DINNER" imgSrc={Dinner}/>  
+           <Meal title="SNACKS" imgSrc={Snacks}/>  
       </div>
     );
 };
