@@ -18,20 +18,18 @@ const Meals = ({title,imgSrc}) => {
 
   const setFoodArrFunc = (chosenfoodInfo) => {
     // if(localStorage.getItem('foodArr')){
-    //   setFoodArr(JSON.parse(localStorage.getItem('foodArr')));
+    //   setAllChosenArr(JSON.parse(localStorage.getItem('foodArr')));
     // }
     // else{
-    //   setFoodArr(chosenFoodArr);
+    //   localStorage.setItem('foodArr', JSON.stringify(allChosenArr));
     // }
-    // localStorage.setItem('foodArr', JSON.stringify(chosenFoodArr));
-    
     let counter=chosenfoodInfo.calories;
     setAllChosenArr([chosenfoodInfo, ...allChosenArr]);
-    console.log("meals",allChosenArr,chosenfoodInfo.calories);
     allChosenArr.map((x)=>{
       return counter+=x.calories;
     })
     setTotalCalories(counter.toFixed(2));
+  
 };
 
 const rowClickHandler=(index)=>{
@@ -41,15 +39,15 @@ const rowClickHandler=(index)=>{
 
   return (
     
-      <div className="mealTypeContainer">
+      <div className="mealContainer">
         <table>
             <thead>
                 <tr>
-                    <th colSpan="2">{title}<button onClick={togglePop}>+</button></th>
+                    <th colSpan="2">{title}<button className="plusBtn" onClick={togglePop}>+</button></th>
                 </tr>
                 <tr>
                     <th style={{width:'300px'}}>SERVING</th>
-                    <th style={{width:'100px'}}>Total-CAL {totalCalories}</th>
+                    <th style={{width:'150px'}}>Total-CAL {totalCalories}</th>
                 </tr>
             </thead>
             <tbody>

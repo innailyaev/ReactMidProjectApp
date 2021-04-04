@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AutoCompleteApi from "./AutoCompleteApi";
 import '../Styles/DataStyle.css';
+import Button from './Button';
 
 let foodInfoObj={};
 
@@ -116,7 +117,7 @@ const viewFullInfo =()=>{
           }
         </tbody>
       </table>
-      <button onClick={addClickHandler}>ADD</button>
+      <Button click={addClickHandler} content="ADD"/>
       <button onClick={viewFullInfo}>View full nutrition info</button>
 
     </div>

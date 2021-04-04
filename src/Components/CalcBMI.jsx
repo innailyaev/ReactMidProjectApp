@@ -4,8 +4,8 @@ import Button from "./Button";
 
 const CalcBMI = () => {
 
-  const [height,setHeight] = useState();
-  const [weight,setWeight]=useState();
+  const [height,setHeight] = useState(0);
+  const [weight,setWeight]=useState(0);
   const [BMI,setBMI] = useState('');
   const [overToggle,setOverToggle]=useState(false);
   const [lessToggle,setlessToggle]=useState(false);
@@ -62,6 +62,9 @@ const CalcBMI = () => {
       return ((height/100*height/100)*x).toFixed(1);
     })
     setBmiInfoArr(arr);
+    if(height === 0){
+      setBMI(0);
+    }
   }
 
     return (

@@ -1,5 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
+import Button from './Button';
+
 
 
 const AutoCompleteApi = ({q}) => {
@@ -33,7 +35,7 @@ const searchResults =()=>{
     return (
       <div>
         <input list="food" type="search" onChange={changeHandler}/>
-        <input type="button" value="Search" onClick={searchResults}/>
+        <Button  content="Search" click={searchResults}/>
         <datalist id="food">
           { (AutoCompleteApi==null) ? (<h3>Loading...</h3>) : (
               AutoCompleteApi.map((f,index)=>{
