@@ -12,7 +12,7 @@ const handleClick = () => {
     <div className="modal">
         <div className="modalContent">
             <span className="close" onClick={handleClick}>&times;</span>
-            <p>I'm A Pop Up!!!</p>
+            <p></p>
             {content}
         </div>
    </div>

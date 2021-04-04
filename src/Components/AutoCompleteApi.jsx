@@ -40,9 +40,7 @@ const searchResults =()=>{
                   return<option key={index}>{f}</option >
               })
           ) }  
-        </datalist>  
-       
-               
+        </datalist>       
       </div>
     );
 };

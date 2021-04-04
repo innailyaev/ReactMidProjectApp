@@ -3,20 +3,19 @@ import axios from 'axios';
 import AutoCompleteApi from "./AutoCompleteApi";
 import '../Styles/DataStyle.css';
 
+let foodInfoObj={};
 
-let foodInfoArr=[];
-const FoodDataBaseAPI = ({dataFoodArr,addbtn}) => {
+const FoodDataBaseAPI = ({chosenFood,addbtn}) => {
 
 console.log("start function food data base");
 const [foodApi,setFoodApi]=useState([]);
 const [measuresApi,setMeasuresApi]=useState([]);
-const [foodArray,setFoodArr]=useState([]);
 const [query,setQuery]=useState('rou');
 const [calories,setCalories]=useState(0);
-let chosenCal;
+let chosenCal=0;
+
 
 const getApi= async () => {
-   
     console.log("getApi");
     try{
         const response = await axios.get(`https://api.edamam.com/api/food-database/v2/parser?nutrition-type=&ingr=${query}&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
@@ -49,32 +48,35 @@ const searchResults =(search)=>{
 }
 
 const checkboxHandler=(index)=>{
-    chosenCal=measuresApi[index].weight/100*calories;
-    addHandler(chosenCal);
+    chosenCal=measuresApi[index].weight/100*calories;       
 }
 
-const addHandler=(cal)=>{
+const addHandler=()=>{
     
-    let foodObj={
+     foodInfoObj={
         label:foodApi[0].food.label,
         foodId:foodApi[0].food.foodId,
         foodImg:foodApi[0].food.image,
-        calories:cal,
+        calories:chosenCal,
         fat:foodApi[0].food.nutrients.FAT,
         fibers:foodApi[0].food.nutrients.FIBTG,
         protein:foodApi[0].food.nutrients.PROCNT,
         carbs:foodApi[0].food.nutrients.CHOCDF,
     }
 
-    foodInfoArr.push(foodObj);
-    setFoodArr(foodInfoArr);
-    console.log("data",foodInfoArr);
+    // chosenfoodArr.push(foodInfoObj);
+    console.log("data",foodInfoObj);
     
 }
 
 const addClickHandler=()=>{
-    dataFoodArr(foodArray);
+    addHandler();
+    chosenFood(foodInfoObj);
     addbtn();
+}
+
+const viewFullInfo =()=>{
+  console.log(foodInfoObj.label);
 }
 
     return (
@@ -115,6 +117,8 @@ const addClickHandler=()=>{
         </tbody>
       </table>
       <button onClick={addClickHandler}>ADD</button>
+      <button onClick={viewFullInfo}>View full nutrition info</button>
+
     </div>
     );
 };

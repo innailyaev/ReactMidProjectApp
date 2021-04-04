@@ -8,9 +8,7 @@ import Snacks from "../Assets/snacks.jpeg";
 
 
 
-
 const MyMeals = () => {
-
 
     return (
       <div className="mealsContainer">
