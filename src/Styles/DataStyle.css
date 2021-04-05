@@ -1,6 +1,15 @@
 .autoCompleteContainer{
     display: flex;
     font-family: 'Rancho', cursive;
+    justify-content: center;
+}
+
+.autoCompleteContainer input{
+    background: transparent;
+    border: none;
+    border-bottom: solid #1a759f;
+    margin-bottom: 20px;
+    font-family: 'Rancho', cursive;
 }
 
 .foodTypes{

@@ -79,7 +79,11 @@ const addClickHandler=()=>{
 }
 
 const viewFullInfo =()=>{
-  setFullInfoBtnToggle(!fullInfoBtnToggle);
+  if(foodApi.length===0){
+    setFullInfoBtnToggle(false);
+  }
+  else
+    setFullInfoBtnToggle(!fullInfoBtnToggle);
 }
 
     return (
@@ -101,7 +105,7 @@ const viewFullInfo =()=>{
           <table>
             <thead>
                 <tr>
-                    <th style={{width:'200px'}}>SERVING</th>
+                    <th style={{width:'200px', }}>SERVING</th>
                     <th style={{width:'200px'}}>Weight</th>
                     <th style={{width:'100px'}}>CAL</th>
                 </tr>
