@@ -32,6 +32,12 @@ const CalcBMI = () => {
       setlessToggle(false);
       setOverToggle(false);
       setHeight(e.target.value);
+      // if(localStorage.getItem('foodArr')){
+    //   setAllChosenArr(JSON.parse(localStorage.getItem('foodArr')));
+    // }
+    // else{
+    //   localStorage.setItem('foodArr', JSON.stringify(allChosenArr));
+    // }
     }
   }
 
@@ -65,6 +71,13 @@ const CalcBMI = () => {
     if(height === 0){
       setBMI(0);
     }
+    //  if(localStorage.getItem('BMI-Weight')){
+    //   setWeight(JSON.parse(localStorage.getItem('BMI-Weight')));
+    // }
+    // else{
+    //   localStorage.setItem('BMI-Weight', JSON.stringify(weight));
+    // }
+
   }
 
     return (
