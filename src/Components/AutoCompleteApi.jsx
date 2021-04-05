@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Button from './Button';
+import '../Styles/DataStyle.css';
 
 
 
@@ -33,7 +34,7 @@ const searchResults =()=>{
 }
 
     return (
-      <div>
+      <div className="autoCompleteContainer">
         <input list="food" type="search" onChange={changeHandler}/>
         <Button  content="Search" click={searchResults}/>
         <datalist id="food">

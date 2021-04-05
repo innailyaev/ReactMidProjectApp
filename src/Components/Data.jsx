@@ -3,6 +3,7 @@ import axios from 'axios';
 import AutoCompleteApi from "./AutoCompleteApi";
 import '../Styles/DataStyle.css';
 import Button from './Button';
+import FullNutritionInfo from "./FullNutritionInfo";
 
 let foodInfoObj={};
 
@@ -13,6 +14,7 @@ const [foodApi,setFoodApi]=useState([]);
 const [measuresApi,setMeasuresApi]=useState([]);
 const [query,setQuery]=useState('rou');
 const [calories,setCalories]=useState(0);
+const [fullInfoBtnToggle,setFullInfoBtnToggle] = useState(false);
 let chosenCal=0;
 
 
@@ -77,7 +79,7 @@ const addClickHandler=()=>{
 }
 
 const viewFullInfo =()=>{
-  console.log(foodInfoObj.label);
+  setFullInfoBtnToggle(!fullInfoBtnToggle);
 }
 
     return (
@@ -118,7 +120,8 @@ const viewFullInfo =()=>{
         </tbody>
       </table>
       <Button click={addClickHandler} content="ADD"/>
-      <button onClick={viewFullInfo}>View full nutrition info</button>
+      <button className="fullInfo" onClick={viewFullInfo}>View full nutrition info</button>
+      {fullInfoBtnToggle ? <FullNutritionInfo infoArr={foodApi}/> : null}
 
     </div>
     );

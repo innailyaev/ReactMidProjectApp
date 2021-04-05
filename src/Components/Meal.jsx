@@ -46,8 +46,8 @@ const rowClickHandler=(index)=>{
                     <th colSpan="2">{title}<button className="plusBtn" onClick={togglePop}>+</button></th>
                 </tr>
                 <tr>
-                    <th style={{width:'300px'}}>SERVING</th>
-                    <th style={{width:'150px'}}>Total-CAL {totalCalories}</th>
+                    <th style={{width:'300px',fontSize:'20px' }}>SERVING</th>
+                    <th style={{width:'170px',fontSize:'20px'}}>Total-CAL <span style={{color:'black', fontSize:'20px'}}>{totalCalories}</span></th>
                 </tr>
             </thead>
             <tbody>
