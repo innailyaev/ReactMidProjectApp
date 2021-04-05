@@ -1,17 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../Styles/BmiStyle.css';
 import Button from "./Button";
 
 const CalcBMI = () => {
 
   const [height,setHeight] = useState(0);
-  const [weight,setWeight]=useState(0);
+  const [weight,setWeight]=useState('');
   const [BMI,setBMI] = useState('');
   const [overToggle,setOverToggle]=useState(false);
   const [lessToggle,setlessToggle]=useState(false);
   const [bmiRange,setBmiRange]=useState('');
   const [bmiInfoArr,setBmiInfoArr] = useState([0,0,0,0]);
   const bmiScale = [18.5,25,30,40];
+  
+
+//   useEffect(()=>{
+//     if(localStorage.getItem('BMI-Weight')){
+//       setWeight(JSON.parse(localStorage.getItem('BMI-Weight')));
+//     }
+//     else{
+//       localStorage.setItem('BMI-Weight', JSON.stringify(weight));
+//     }
+// },[weight]);
 
   const heightHandler=(e)=>{
     console.log(e.target.value);
@@ -32,17 +42,11 @@ const CalcBMI = () => {
       setlessToggle(false);
       setOverToggle(false);
       setHeight(e.target.value);
-      // if(localStorage.getItem('foodArr')){
-    //   setAllChosenArr(JSON.parse(localStorage.getItem('foodArr')));
-    // }
-    // else{
-    //   localStorage.setItem('foodArr', JSON.stringify(allChosenArr));
-    // }
     }
   }
 
   const weightHandler=(e)=>{
-    setWeight(e.target.value);
+   setWeight(e.target.value);
   }
 
   const formSubmit=(e)=>{
@@ -71,13 +75,6 @@ const CalcBMI = () => {
     if(height === 0){
       setBMI(0);
     }
-    //  if(localStorage.getItem('BMI-Weight')){
-    //   setWeight(JSON.parse(localStorage.getItem('BMI-Weight')));
-    // }
-    // else{
-    //   localStorage.setItem('BMI-Weight', JSON.stringify(weight));
-    // }
-
   }
 
     return (
@@ -93,7 +90,7 @@ const CalcBMI = () => {
               {overToggle ? <p className="textToggle">Your height should not be over 270 cm</p>: null}
               {lessToggle ? <p className="textToggle">Your height should not be less 100 cm</p>: null}
               <label>Current Weight</label>
-              <input type="text" onChange={weightHandler}/>
+              <input type="text" onChange={weightHandler} value={weight}/>
               <Button click={bmiClickHandler} content={'Calc BMI'}/>
             </form>   
             <div className="bmiResult">Your BMI is: <span>{BMI}</span> {bmiRange}</div>

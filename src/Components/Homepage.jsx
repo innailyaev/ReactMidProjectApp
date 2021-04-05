@@ -1,4 +1,5 @@
 import React from "react";
+import MainLogIn from "./MainLogIn";
 
 export default class Homepage extends React.Component{
     constructor(props){
@@ -9,7 +10,7 @@ export default class Homepage extends React.Component{
     render(){
         return(
             <div>
-                Homepage
+                <MainLogIn/>
             </div>
         )
     }
