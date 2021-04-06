@@ -1,4 +1,3 @@
-import react from 'react';
 
 const LogIn =(props)=>{
 
@@ -16,7 +15,7 @@ const LogIn =(props)=>{
     return (
         <section className="login">
             <div className="loginContainer">
-                <label>Username</label>
+                <label>Username (Email)</label>
                 <input type="text" required value={email} onChange={(e)=>setEmail(e.target.value)}/>
                 <p className="errorMsg">{emailError}</p>
                 <label>Password</label>
@@ -25,10 +24,10 @@ const LogIn =(props)=>{
                 <div className="btnContainer">
                     {
                         (hasAccount) ? (
-                        <> <button onClick={handelLogIn}>Sign In</button>
+                        <><button onClick={handelLogIn}>Sign In</button>
                         <p>Don't have an account ? <span onClick={()=>setHasAccount(!hasAccount)}>Sign Up</span></p></>)
                         :(
-                            <> <button onClick={handelSignUp}>Sign Up</button>
+                            <><button onClick={handelSignUp}>Sign Up</button>
                             <p>Have an account ? <span onClick={()=>setHasAccount(!hasAccount)}>Sign In</span></p></>
                         ) 
                     }

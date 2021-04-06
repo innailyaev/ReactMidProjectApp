@@ -1,7 +1,7 @@
-import react ,{ useState ,useEffect} from 'react';
+import { useState ,useEffect} from 'react';
 import fire from '../Fire.js';
 import LogIn from './LogIn';
-import Hero from './Hero';
+import LogOut from './LogOut';
 import '../Styles/LogInStyle.css';
 
 const MainLogIn =()=>{
@@ -80,13 +80,13 @@ const MainLogIn =()=>{
 
     useEffect(()=>{
         authListener();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     return (
-
         <div>
             {user ? (
-                <Hero handelLogOut={handelLogOut}/>
+                <LogOut handelLogOut={handelLogOut}/>
             ) : (
                 <LogIn email={email} 
                 setEmail={setEmail} 
