@@ -4,10 +4,9 @@ import Button from "./Button";
 
 const RecipeCard =({label,dishType,calories,image,ingre,mealType,servingNum,linkRecipe})=>{
 
-    const print=()=>{
-        console.log(label,dishType,calories,image,ingre);
+    const seeIngredients=()=>{
+        
     }
-    print();
 
     return (
             <div className="card"> 
@@ -16,7 +15,7 @@ const RecipeCard =({label,dishType,calories,image,ingre,mealType,servingNum,link
                 <p>Meal Type: {mealType}</p>
                 <img src={image} alt=""></img>
                 <p>Calories: {(calories/servingNum).toFixed(1)}</p>
-                <Button content="See ingredients" click={print}/> 
+                <Button content="See ingredients" click={seeIngredients}/> 
                 <a href={linkRecipe} rel="noreferrer" target='_blank' style={{color:'#184e77'}}>Go to recipe</a><br/> 
             </div>
         

@@ -38,13 +38,6 @@ useEffect(()=>{
 // eslint-disable-next-line react-hooks/exhaustive-deps
 },[query]);
   
-// const changeHandler=(e)=>{
-//     setSearch(e.target.value);
-//     if(e.target.value === "") {
-//         setFoodApi([]);
-//     }
-// }
-
 const searchResults =(search)=>{
     setFoodApi(null);
     setQuery(search);  
@@ -65,11 +58,7 @@ const addHandler=()=>{
         fibers:foodApi[0].food.nutrients.FIBTG,
         protein:foodApi[0].food.nutrients.PROCNT,
         carbs:foodApi[0].food.nutrients.CHOCDF,
-    }
-
-    // chosenfoodArr.push(foodInfoObj);
-    console.log("data",foodInfoObj);
-    
+    }  
 }
 
 const addClickHandler=()=>{

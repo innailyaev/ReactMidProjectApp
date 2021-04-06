@@ -13,6 +13,8 @@ const Recipes =()=>{
     const [health,setHealth] = useState('');
     // const [diet,setDiet] = useState('');
     const [recipesArr,setRecipesArr] = useState([]);
+    // const [searchBtnToggle,setSearchBtnToggle] = useState(false);
+
 
 
     const getApi= async () => {
@@ -27,17 +29,26 @@ const Recipes =()=>{
     }
     
     const healthChangeHandler=(e)=>{
-        console.log(e.target.value);
         setHealth(e.target.value);
     }
 
     const FoodQueryHandler =(e)=>{
-        console.log(e.target.value);
         setFoodQuery(e.target.value);      
     }
 
+    // const checkHandler =()=>{
+    //     if(recipesArr.length===0){
+    //         setSearchBtnToggle(false);
+    //         return false;
+    //     }
+    //     else{
+    //     setSearchBtnToggle(!searchBtnToggle);
+    //     return true;
+    //     }
+    // }
+
     const clickHandler=()=>{
-        getApi();
+            getApi();
     }
 
 
@@ -54,8 +65,8 @@ const Recipes =()=>{
                     <label>Max Ingredients:</label>
                     <input type="number" min="0" max="100" onChange={(e) => setMaxIngredients(e.target.value)}/>
                     <label>Health:</label>
-                    <select name="" id="" onChange={healthChangeHandler} placeholder="select ">
-                    <option value=""></option>
+                    <select name="" id="" onChange={healthChangeHandler} defaultValue='Choose Health Label...' >
+                    <option disabled  hidden>Choose Health Label...</option>
                         {
                             data.health.map((x,index)=>{
                                 return <option key={index} value={x}>{x}</option>
@@ -66,8 +77,8 @@ const Recipes =()=>{
                 </div>
                 <div className="cardContainer">
                     {
-                        recipesArr.map((x)=>(
-                            <RecipeCard label={x.recipe.label} 
+                        recipesArr.map((x,index)=>(
+                            <RecipeCard key={index} label={x.recipe.label} 
                                         dishType={x.recipe.dishType}
                                         calories={x.recipe.calories}
                                         image={x.recipe.image}
@@ -78,6 +89,7 @@ const Recipes =()=>{
                         ))
                     }
                 </div>
+               
             </div>
         </div>
     )

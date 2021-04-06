@@ -50,9 +50,10 @@ input:focus{
     font-family: 'Rancho', cursive;
     background-color: transparent;
     margin-right: 15px;
-    width: 200px;
-    border: solid thin #ffffff;
+    width: 230px;
     outline: none;
+    border: none;
+    border-bottom: solid #1a759f ;
     
 }
 
@@ -93,11 +94,11 @@ input:focus{
     box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     transition: all .4s ease-in-out;
-    animation-name: animatetop;
+    animation-name: animatescale;
     animation-duration: 0.8s;
 }
 
-@keyframes animatetop {
+@keyframes animatescale {
     0% {
         transform: scale(0);
     }
