@@ -6,7 +6,7 @@
 
 .mealContainer{
 height: 800px;
-width: 410px;
+width: 450px;
 font-family: 'Rancho', cursive;
 font-size: 2rem;
 border-radius: 10px;
@@ -43,7 +43,7 @@ tfoot {
 .imgMeal{
     position: absolute;
     background-size: contain;
-    width: 409px;
+    width: 450px;
     height: 400px;
 }
 

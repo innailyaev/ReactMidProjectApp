@@ -91,7 +91,7 @@ const viewFullInfo =()=>{
           {/* <input type="search" onChange={changeHandler} style={{height:'30px'}}/>
           <input type="button" value="Search" onClick={searchResults}/> */}
         <AutoCompleteApi q={searchResults}/>
-        { (foodApi==null) ? (<div class="ui active inline loader"></div>) : (
+        { (foodApi==null) ? (<div className="ui active inline loader"></div>) : (
               foodApi.map((f,index)=>
               {
                   return(
