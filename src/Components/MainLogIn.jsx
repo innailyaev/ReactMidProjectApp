@@ -1,7 +1,9 @@
-import { useState ,useEffect} from 'react';
+import React, { useState ,useEffect} from 'react';
+
+
 import fire from '../Fire.js';
 import LogIn from './LogIn';
-import LogOut from './LogOut';
+import Hero from './Hero';
 import '../Styles/LogInStyle.css';
 
 const MainLogIn =()=>{
@@ -71,8 +73,7 @@ const MainLogIn =()=>{
             if(user){
                 clearInputs();
                 setUser(user);
-            }
-                
+            }  
             else
                 setUser('');
         });
@@ -86,9 +87,9 @@ const MainLogIn =()=>{
     return (
         <div>
             {user ? (
-                <LogOut handelLogOut={handelLogOut}/>
+                 <Hero handelLogOut={handelLogOut}/>
             ) : (
-                <LogIn email={email} 
+               <LogIn email={email} 
                 setEmail={setEmail} 
                 pass={password} 
                 setPass={setPassword} 
