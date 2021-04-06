@@ -1,0 +1,121 @@
+.recipesMain{
+    height: 100vh;
+    background-image: url("../Assets/nutrition.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.recipesContainer{
+    font-family: 'Rancho', cursive;  
+    width: 100%; 
+}
+
+.recipesContainer h1{
+    font-family: 'Rancho', cursive;  
+    font-size: 90px;
+    text-align: center;
+    color:#277da1;
+}
+
+.recipesSearch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-size: 30px;
+    font-family: 'Rancho', cursive;  
+}
+
+.recipesSearch input{
+    height: 35px;
+    background: transparent;
+    border: none;
+    border-bottom: solid #1a759f;
+    margin-bottom: 20px;
+    font-family: 'Rancho', cursive;
+    margin-left: 15px;
+    margin-right: 15px; 
+}
+
+input:focus{
+    outline: none;
+    background-color: transparent;
+}
+
+.recipesSearch label{
+    margin-right: 15px;
+}
+.recipesSearch select{
+    height: fit-content;
+    font-family: 'Rancho', cursive;
+    background-color: transparent;
+    margin-right: 15px;
+    width: 200px;
+    border: solid thin #ffffff;
+    outline: none;
+    
+}
+
+.recipesSearch button{
+    height: 50px;
+    font-family: 'Rancho', cursive;
+
+}
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Recipe card */
+.recipeCard{
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    border: solid yellow;
+}
+.card{
+    width: 350px;
+    height:650px;
+    font-size: 25px;
+    text-align: center;
+    background-size: contain;
+    box-shadow: 5px 10px lightblue;
+    margin: 10px;
+    background: radial-gradient(
+      ellipse at left bottom,
+      rgba(97, 208, 223, 0.9) 0%,
+      rgba(164, 230, 184, 0.9) 59%,
+      rgba(108, 200, 212, 0.9) 100%
+    );
+    box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    transition: all .4s ease-in-out;
+    animation-name: animatetop;
+    animation-duration: 0.8s;
+}
+
+@keyframes animatetop {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card:hover {
+    box-shadow: 8px 10px 16px 0 rgba(26, 117, 159,0.7);
+    transform: scale(1.2); 
+}
+
+.card button{
+    margin-bottom: 15px;
+}
+
+.card img{
+    border-radius: 10px;
+}
+
