@@ -39,7 +39,7 @@
 
 input:focus{
     outline: none;
-    background-color: transparent;
+    background-color: none;
 }
 
 .recipesSearch label{
@@ -59,8 +59,6 @@ input:focus{
 
 .recipesSearch button{
     height: 50px;
-    font-family: 'Rancho', cursive;
-
 }
 
 .cardContainer{

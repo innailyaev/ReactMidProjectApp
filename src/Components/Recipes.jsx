@@ -11,11 +11,8 @@ const Recipes =()=>{
     const [caloriesMax,setCaloriesMax]=useState('');
     const [maxIngredients,setMaxIngredients]=useState();
     const [health,setHealth] = useState('');
-    // const [diet,setDiet] = useState('');
+    const [errorMsgToggle,setErrorMsgToggle] = useState(false);
     const [recipesArr,setRecipesArr] = useState([]);
-    // const [searchBtnToggle,setSearchBtnToggle] = useState(false);
-
-
 
     const getApi= async () => {
         console.log("getApi");
@@ -36,22 +33,15 @@ const Recipes =()=>{
         setFoodQuery(e.target.value);      
     }
 
-    // const checkHandler =()=>{
-    //     if(recipesArr.length===0){
-    //         setSearchBtnToggle(false);
-    //         return false;
-    //     }
-    //     else{
-    //     setSearchBtnToggle(!searchBtnToggle);
-    //     return true;
-    //     }
-    // }
-
     const clickHandler=()=>{
+        if(caloriesMax === '' || health === '' || maxIngredients === undefined )
+            setErrorMsgToggle(true);
+        else{
+            setRecipesArr(null)
+            setErrorMsgToggle(false);
             getApi();
+        }
     }
-
-
 
     return (
         <div className="recipesMain">
@@ -75,21 +65,24 @@ const Recipes =()=>{
                     </select>
                         <Button click={clickHandler} content="Search"/>
                 </div>
+                {
+                    errorMsgToggle ? <p style={{color:'red', fontSize:'40px',marginLeft:'300px'}}>Please fill all the fields <span style={{fontSize:'25px', color:'black'}}>(The 'type of food' field is optional)</span></p> : null
+                }
                 <div className="cardContainer">
-                    {
-                        recipesArr.map((x,index)=>(
-                            <RecipeCard key={index} label={x.recipe.label} 
-                                        dishType={x.recipe.dishType}
-                                        calories={x.recipe.calories}
-                                        image={x.recipe.image}
-                                        ingre={x.recipe.ingredientLines}
-                                        mealType={x.recipe.mealType}
-                                        servingNum={x.recipe.yield}
-                                        linkRecipe={x.recipe.url}/>
-                        ))
-                    }
+                {
+                    (recipesArr==null) ? (<div className="ui active inline loader"></div>)
+                             : recipesArr.map((x,index)=>(
+                                    <RecipeCard key={index} label={x.recipe.label} 
+                                                dishType={x.recipe.dishType}
+                                                calories={x.recipe.calories}
+                                                image={x.recipe.image}
+                                                ingre={x.recipe.ingredientLines}
+                                                mealType={x.recipe.mealType}
+                                                servingNum={x.recipe.yield}
+                                                linkRecipe={x.recipe.url}/>
+                            ))         
+                }
                 </div>
-               
             </div>
         </div>
     )
