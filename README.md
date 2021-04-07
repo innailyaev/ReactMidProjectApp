@@ -26,7 +26,7 @@ Add search exercises by categories.
 Display data in a graph.
 
 ## Visual
-![Markdown Logo]("./src/Assets/mySite.png")
+![plot](./src/Assets/mySite.png)
 
 
 [link to the site](https://react-mid-project.netlify.app/)
