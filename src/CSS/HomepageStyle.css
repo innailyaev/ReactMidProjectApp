@@ -64,3 +64,65 @@ margin: 30px;
     color:#76c893;
 }
 
+.loginMenu{
+    margin-left: 1300px;
+    cursor: pointer;
+    color: darkblue;
+    font-size: 18px;
+}
+
+
+@media (max-width: 500px){
+    .welcome{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .welcome h1{
+        font-size: 50px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+    .titleImage{
+        height: 70px;
+        width: 200px;
+        margin-top: 30px;
+        margin-left: 20px;
+       
+    }
+    
+    .headerImage{
+        height: 200px;
+    }
+    
+    .homepageInfo{
+        margin-top: 370px;
+        padding-left: 15px;
+        width: 400px;
+        font-size: 16px;
+    }
+    
+    .homepageInfo h2{        
+        font-size: 50px;
+    }
+    
+    .about {
+        width: 400px;
+        font-size: 16px;
+        margin-left: 0px;
+        margin-top: 260px;
+        margin-bottom: 25px;
+    }
+
+    .loginMenu{
+        margin-left: 0px;
+    }
+}
+
+@media(min-width:501px) and (max-width: 768px){
+
+
+
+}
+

@@ -1,10 +1,11 @@
 import React from 'react';
+import '../CSS/LogInStyle.css';
 
 const Hero =({handelLogOut})=>{
 
     return (
         <div className="hero"> 
-            <button onClick={handelLogOut}>LogOut</button>
+            <button className="signInbtn" onClick={handelLogOut}>LogOut</button>
         </div>
     )
 }

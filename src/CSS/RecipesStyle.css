@@ -89,6 +89,11 @@ input:focus{
     animation-duration: 0.8s;
 }
 
+.card p{
+    margin: 5px;
+}
+
+
 @keyframes animatescale {
     0% {
         transform: scale(0);

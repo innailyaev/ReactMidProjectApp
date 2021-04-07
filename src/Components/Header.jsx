@@ -23,7 +23,7 @@ const Header =()=>{
                <Menu.Item name="mymeals"><Link to="/mymeals" >My Meals</Link></Menu.Item>
                <Menu.Item name="bmi"><Link to="/bmi" >BMI</Link></Menu.Item>
                <Menu.Item name="recipes"><Link to="/recipes" >Recipes</Link></Menu.Item>  
-               <Menu.Item name="login"><p onClick={togglePop} style={{marginLeft:'1300px',cursor:'pointer', color:'darkBlue'}}>Login</p></Menu.Item>
+               <Menu.Item name="login"><p onClick={togglePop} className="loginMenu">Login</p></Menu.Item>
                <Menu.Item name="logo"><div className="logo"></div></Menu.Item>  
   
             </Menu>

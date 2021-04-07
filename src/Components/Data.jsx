@@ -44,10 +44,12 @@ const searchResults =(search)=>{
 }
 
 const checkboxHandler=(index)=>{
-    chosenCal=measuresApi[index].weight/100*calories;       
+    chosenCal=measuresApi[index].weight/100*calories; 
+    console.log("checkbox",chosenCal);      
 }
 
 const checkChosenHandler =()=>{
+  console.log("hhhh",chosenCal);
   if(chosenCal === 0){
       chosenCal=calories;
   }
@@ -102,9 +104,9 @@ const viewFullInfo =()=>{
               )})
         )}
           <table>
-            <thead>
+            <thead style={{fontSize:'20px'}}>
                 <tr>
-                    <th style={{width:'200px', }}>SERVING</th>
+                    <th style={{width:'200px'}}>SERVING</th>
                     <th style={{width:'200px'}}>Weight</th>
                     <th style={{width:'100px'}}>CAL</th>
                 </tr>
@@ -112,7 +114,7 @@ const viewFullInfo =()=>{
             <tbody>
           {
               measuresApi.map((m,index)=>(
-                <tr key={index}>
+                <tr key={index} style={{marginBottom:'15px'}}>
                   <td>{m.label}</td>
                   <td>{((m.weight).toFixed(2))}</td>
                   <td>{((m.weight/100)*calories).toFixed(2)}</td>

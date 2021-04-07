@@ -72,14 +72,17 @@
     font-size: 16px;
   }
   
-  /* .hero {
-    width: 100%;
-    min-height: 100vh;
-    background: radial-gradient(
-      ellipse at left bottom,
-      rgba(22, 24, 47, 1) 0%,
-      rgba(38, 20, 72, 0.9) 59%,
-      rgba(17, 27, 75, 0.9) 100%
-    );
-  } */
+  .signInbtn{
+    background-color: transparent;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border-color:  rgba(10, 126, 141, 0.9);
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+  }
   
+  .btnContainer p{
+    font-size: 25px;
+  }

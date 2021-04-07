@@ -21,10 +21,6 @@
     cursor: pointer;
 }
 
-.foodTypes:hover{
-    background-color: rgb(180, 233, 180);
-}
-
 .foodTypes img{
     border-radius: 50px;
 }
@@ -42,6 +38,5 @@
     border-bottom: solid #1a759f;
     cursor: pointer;
     font-family: 'Rancho', cursive;
-
 }
 

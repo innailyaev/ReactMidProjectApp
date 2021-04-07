@@ -61,3 +61,21 @@ tfoot {
     cursor: pointer;
     outline: none;
 }
+
+@media (max-width: 500px){
+    .mealsContainer{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .mealContainer{
+        height: 800px;
+        width: 420px;
+    }
+
+    .imgMeal{
+        width: 420px;
+    }
+
+}

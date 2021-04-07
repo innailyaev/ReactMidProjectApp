@@ -109,9 +109,66 @@ span{
     cursor: pointer;
 }
   
-/* .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #76c893;
-    cursor: pointer;
-} */
+@media (max-width: 500px){
+    .bmiMain{
+        height: 100vh;
+        width: 440px;
+        align-items: center;
+    }
+    
+    .bmiContainer{
+        display: flex;
+        flex-direction: column;
+        height: 500px;
+        width: 420px;
+        font-size: 25px;
+    }
+    
+    .formContainer{
+        height: 800px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        border-right: none;
+    }
+    
+    .bmiInfoDiv{
+        width: 400px;
+        padding-top: 30px;
+        padding-left: 65px;
+        font-size: 20px;
+    }
+    
+    .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .form input{
+        margin-bottom: 30px;
+        margin-top: 10px;
+        font-size: 25px;
+        text-align: center;
+        border: none;
+        border-bottom: solid #1a759f;
+        width: 200px;
+        background: transparent;
+    }
+    
+    .bmiMain h1{
+        font-size: 50px;  
+    }
+    
+    .textToggle{
+        color: red;
+        font-size: 1.5rem;
+    }
+    
+    .bmiResult{
+        margin-bottom: 20px;
+    }
+}

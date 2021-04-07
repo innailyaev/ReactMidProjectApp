@@ -16,6 +16,7 @@
 
 ## Approach Taken
 I started my app by checking out existing apps related to my app. Search for a suitable API, explore the API in depth. Understand the relationships between the various functions, create appropriate components and the relationship between them.
+I used 3 APIs, of nutrition, of recipes and of autoCompleteApi.
 ## Wins and Blockers
 ### Wins
 
