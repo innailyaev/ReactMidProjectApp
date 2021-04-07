@@ -47,24 +47,36 @@ const checkboxHandler=(index)=>{
     chosenCal=measuresApi[index].weight/100*calories;       
 }
 
+const checkChosenHandler =()=>{
+  if(chosenCal === 0){
+      chosenCal=calories;
+  }
+  else{
+  }
+}
 const addHandler=()=>{
-    
-     foodInfoObj={
-        label:foodApi[0].food.label,
-        foodId:foodApi[0].food.foodId,
-        foodImg:foodApi[0].food.image,
-        calories:chosenCal,
-        fat:foodApi[0].food.nutrients.FAT,
-        fibers:foodApi[0].food.nutrients.FIBTG,
-        protein:foodApi[0].food.nutrients.PROCNT,
-        carbs:foodApi[0].food.nutrients.CHOCDF,
-    }  
+    foodInfoObj={
+      label:foodApi[0].food.label,
+      foodId:foodApi[0].food.foodId,
+      foodImg:foodApi[0].food.image,
+      calories:chosenCal,
+      fat:foodApi[0].food.nutrients.FAT,
+      fibers:foodApi[0].food.nutrients.FIBTG,
+      protein:foodApi[0].food.nutrients.PROCNT,
+      carbs:foodApi[0].food.nutrients.CHOCDF,
+    }      
 }
 
 const addClickHandler=()=>{
-    addHandler();
-    chosenFood(foodInfoObj);
-    addbtn();
+    console.log(foodApi.length);
+    if(foodApi.length === 0)
+      console.log(foodApi.length);
+    else{
+      checkChosenHandler();
+      addHandler();
+      chosenFood(foodInfoObj);
+      addbtn();
+    }   
 }
 
 const viewFullInfo =()=>{
@@ -77,15 +89,13 @@ const viewFullInfo =()=>{
 
     return (
       <div>
-          {/* <input type="search" onChange={changeHandler} style={{height:'30px'}}/>
-          <input type="button" value="Search" onClick={searchResults}/> */}
         <AutoCompleteApi q={searchResults} />
         { (foodApi==null) ? (<div className="ui active inline loader"></div>) : (
               foodApi.map((f,index)=>
               {
                   return(
                     <div className="foodTypes" key={index}>
-                        <img src={f.food.image} alt="" height="40"/>
+                        <img src={f.food.image} alt="" height="70"/>
                         <p>{f.food.label}</p>
                         <p>CAL: {f.food.nutrients.ENERC_KCAL} (100gram)</p>
                     </div>

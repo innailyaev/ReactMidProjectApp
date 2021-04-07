@@ -15,10 +15,9 @@
 .foodTypes{
     display: flex;
     justify-content: space-between;
-    width: 470px;
+    width: 500px;
     margin-top: 10px;
     margin-bottom: 5px;
-    border-bottom: solid thin gray;
     cursor: pointer;
 }
 
@@ -26,6 +25,9 @@
     background-color: rgb(180, 233, 180);
 }
 
+.foodTypes img{
+    border-radius: 50px;
+}
 .measuresContainer{
     display: flex;
     justify-content: space-between;

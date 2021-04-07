@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
 import "../CSS/RecipesStyle.css";
 import Button from "./Button";
-import PopUp from './PopUpWindow';
+import MyPopUpWindow from './MyPopUpWindow';
 
 const RecipeCard =({label,dishType,calories,image,ingre,mealType,servingNum,linkRecipe})=>{
 
     const [popUpSeen,setPopUpSeen] = useState(false);
 
     const togglePop = () => {
+        console.log(popUpSeen);
         setPopUpSeen(!popUpSeen);
     };  
 
@@ -24,7 +25,7 @@ const RecipeCard =({label,dishType,calories,image,ingre,mealType,servingNum,link
                 
             </div>
             {
-                    popUpSeen ? <PopUp toggle={setPopUpSeen} content=
+                    popUpSeen ? <MyPopUpWindow toggle={setPopUpSeen} content=
                     {
                         <ol>
                             {

@@ -1,7 +1,7 @@
 import React from "react";
 import "../CSS/PopUpStyle.css";
 
-const PopUp =({toggle,content})=>{
+const MyPopUpWindow =({toggle,content})=>{
 
 const handleClick = () => {
    toggle();
@@ -20,4 +20,4 @@ const handleClick = () => {
 }
 
 
-export default PopUp;
+export default MyPopUpWindow;

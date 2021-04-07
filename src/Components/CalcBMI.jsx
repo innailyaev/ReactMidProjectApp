@@ -24,24 +24,23 @@ const CalcBMI = () => {
 // },[weight]);
 
   const heightHandler=(e)=>{
-    console.log(e.target.value);
-    
-    if(e.target.value.length === 0){
-      setlessToggle(false);
-      setOverToggle(false);
-    }
-    else if(e.target.value < 100){
-      setlessToggle(true);
-      setOverToggle(false)
-    }
-    else if(e.target.value > 270){
-      setOverToggle(true);
-      setlessToggle(false);
-    }
-    else{
-      setlessToggle(false);
-      setOverToggle(false);
-      setHeight(e.target.value);
+    switch(true){
+      case (e.target.value.length === 0):
+        setlessToggle(false);
+        setOverToggle(false);
+        break;
+      case (e.target.value < 100):
+        setlessToggle(true);
+        setOverToggle(false)
+        break;
+      case (e.target.value > 270):
+        setOverToggle(true);
+        setlessToggle(false);
+        break;
+      default:
+        setlessToggle(false);
+        setOverToggle(false);
+        setHeight(e.target.value);
     }
   }
 
@@ -54,7 +53,7 @@ const CalcBMI = () => {
   }
 
   const bmiClickHandler=()=>{
-    let result= (weight)/(height/100*height/100);
+    let result= (weight)/(Math.pow(height/100, 2));
     setBMI(result.toFixed(2));
     if(result <= 18.5)
       setBmiRange('Underweight');
@@ -69,7 +68,7 @@ const CalcBMI = () => {
 
     let arr=[];
     arr=bmiScale.map((x)=>{
-      return ((height/100*height/100)*x).toFixed(1);
+      return ((Math.pow(height/100, 2))*x).toFixed(1);
     })
     setBmiInfoArr(arr);
     if(height === 0){

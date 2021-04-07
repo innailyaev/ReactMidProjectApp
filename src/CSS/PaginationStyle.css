@@ -1,0 +1,21 @@
+.pagination{
+    text-align: center;
+    font-family: 'Rancho', cursive;
+
+}
+
+.pagination ul{
+    display: flex;
+    justify-content: center;
+    background-color: #9DD9F1;
+    font-size: 30px;
+    list-style: none;
+}
+
+.pagination ul li{
+    margin-left: 20px;
+    color: #184e77;
+}
+
+
+

@@ -4,6 +4,7 @@ import data from "./RecipesHealthDietData";
 import '../CSS/RecipesStyle.css';
 import Button from "./Button";
 import RecipeCard from "./RecipeCard";
+import Pagination from "./Pagination";
 
 const Recipes =()=>{
 
@@ -13,17 +14,23 @@ const Recipes =()=>{
     const [health,setHealth] = useState('');
     const [errorMsgToggle,setErrorMsgToggle] = useState(false);
     const [recipesArr,setRecipesArr] = useState([]);
+    const [recipesPerPage] =useState(4);
+    const [totalRecipes, setTotalRecipes] = useState();
+    let firstIndex=0;
+    let lastIndex=4;
+    
 
     const getApi= async () => {
         console.log("getApi");
         try{
-            const response = await axios.get(`https://api.edamam.com/search?q=${foodQuery}&app_id=6504a240&app_key=1aa89bcf5cd432ba57341d0194528787&calories=${caloriesMax}&health=${health}&ingr=${maxIngredients}`);
-            setRecipesArr(response.data.hits);  
+            const response = await axios.get(`https://api.edamam.com/search?from=${firstIndex}&to=${lastIndex}&q=${foodQuery}&app_id=6504a240&app_key=1aa89bcf5cd432ba57341d0194528787&calories=${caloriesMax}&health=${health}&ingr=${maxIngredients}`);
+            setRecipesArr(response.data.hits);
+            setTotalRecipes(20);
         }catch(err){
                 console.log(err); 
         }
     }
-    
+
     const healthChangeHandler=(e)=>{
         setHealth(e.target.value);
     }
@@ -40,6 +47,13 @@ const Recipes =()=>{
             setErrorMsgToggle(false);
             getApi();
         }
+    }
+
+    const paginate = (pageNumber)=>{
+        firstIndex=((pageNumber*recipesPerPage)-recipesPerPage);
+        lastIndex=(pageNumber*recipesPerPage);
+        clickHandler(); 
+        console.log(pageNumber,(pageNumber*recipesPerPage)-recipesPerPage,(pageNumber*recipesPerPage));  
     }
 
     return (
@@ -82,6 +96,7 @@ const Recipes =()=>{
                             ))         
                 }
                 </div>
+                <Pagination recipesPerPage={recipesPerPage} totalRecipes={totalRecipes} paginate={paginate} />
             </div>
         </div>
     )

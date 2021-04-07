@@ -7,7 +7,7 @@
 
 .recipesContainer{
     font-family: 'Rancho', cursive;  
-    width: 100%; 
+    width: 100%;
 }
 
 .recipesContainer h1{
@@ -68,21 +68,14 @@ input:focus{
     align-items: center;
 }
 
-/* Recipe card */
-.recipeCard{
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    border: solid yellow;
-}
 .card{
-    width: 350px;
+    width: 400px;
     height:650px;
     font-size: 25px;
     text-align: center;
     background-size: contain;
     box-shadow: 5px 10px lightblue;
-    margin: 10px;
+    margin: 30px;
     background: radial-gradient(
       ellipse at left bottom,
       rgba(97, 208, 223, 0.9) 0%,
@@ -111,7 +104,7 @@ input:focus{
 }
 
 .card button{
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .card img{

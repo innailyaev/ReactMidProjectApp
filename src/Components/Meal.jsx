@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../CSS/MealsStyle.css';
-import PopUp from "./PopUpWindow";
+import MyPopUpWindow from "./MyPopUpWindow";
 import Data from "./Data";
 
 
@@ -62,7 +62,7 @@ const rowClickHandler=(index)=>{
       </table>
           <img className="imgMeal" src={imgSrc} alt=""/>
           {
-            popUpSeen ? <PopUp toggle={togglePop} content={<Data chosenFood={setFoodArrFunc} addbtn={togglePop}/>}/> : null
+            popUpSeen ? <MyPopUpWindow toggle={togglePop} content={<Data chosenFood={setFoodArrFunc} addbtn={togglePop}/>}/> : null
           }  
       </div>
     );

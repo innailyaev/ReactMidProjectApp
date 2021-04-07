@@ -25,16 +25,18 @@
     background-image: url('../Assets//NutritionHeader.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 .homepageInfo{
     position: absolute;
     top: 0;
     margin-top: 500px;
-    margin-left: 10px;
+    z-index: 1;
+    padding-left: 15px;
     background-color: white;
     width: 800px;
-    height: 500px;
+    height: fit-content;
     font-size: 28px;
 }
 
@@ -46,13 +48,12 @@
 }
 
 .about {
-    position: absolute;
-    right: 150px;
     width: 900px;
     height: 200px;
     font-size: 30px;
-    margin: 20px;
     padding: 20px;
+    margin-left: 850px;
+    margin-bottom: 170px;
 }
 
 .about ul li{
