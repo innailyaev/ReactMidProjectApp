@@ -10,7 +10,7 @@ const [search,setSearch]=useState('');
 
 const getApi = async () => {
     try{
-        const response= await axios.get(`http://api.edamam.com/auto-complete?q=${search}&limit=10&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
+        const response= await axios.get(`https://api.edamam.com/auto-complete?q=${search}&limit=10&app_id=1c87de18&app_key=c1cbf7b34d0750940e80b69794171b04`);
         setAutoCompleteApi(response.data)  
     }catch(err){
             console.log(err); 
