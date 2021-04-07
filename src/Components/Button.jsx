@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/ButtonStyle.css';
+import '../CSS/ButtonStyle.css';
 
 const Button =({content,click})=>{
 

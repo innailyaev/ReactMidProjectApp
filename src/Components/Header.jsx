@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import { Menu} from 'semantic-ui-react';
 import MainLogIn from "./MainLogIn";
 import PopUp from "./PopUpWindow";
-import "../Styles/HeaderStyle.css";
+import "../CSS/HeaderStyle.css";
 
 const Header =()=>{
 

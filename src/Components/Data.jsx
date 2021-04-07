@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AutoCompleteApi from "./AutoCompleteApi";
-import '../Styles/DataStyle.css';
+import '../CSS/DataStyle.css';
 import Button from './Button';
 import FullNutritionInfo from "./FullNutritionInfo";
 

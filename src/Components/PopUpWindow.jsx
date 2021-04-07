@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/PopUpStyle.css";
+import "../CSS/PopUpStyle.css";
 
 const PopUp =({toggle,content})=>{
 

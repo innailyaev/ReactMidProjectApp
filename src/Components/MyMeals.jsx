@@ -1,6 +1,6 @@
 import React from 'react';
 import Meal from "./Meal";
-import "../Styles/MealsStyle.css";
+import "../CSS/MealsStyle.css";
 import BreakfastImg from "../Assets/breakfast.jpg";
 import LunchImg from "../Assets/lunch.jpeg";
 import Dinner from "../Assets/dinner.jpg";

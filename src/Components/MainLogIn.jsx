@@ -1,10 +1,8 @@
 import React, { useState ,useEffect} from 'react';
-
-
 import fire from '../Fire.js';
 import LogIn from './LogIn';
 import Hero from './Hero';
-import '../Styles/LogInStyle.css';
+import '../CSS/LogInStyle.css';
 
 const MainLogIn =()=>{
 

@@ -3,11 +3,9 @@
     background-image: url('../Assets/bmiNutrition.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Rancho', cursive;   
 }
 
 .bmiContainer{
-    font-family: 'Rancho', cursive;
     display: flex;
     height: 500px;
     position: absolute;

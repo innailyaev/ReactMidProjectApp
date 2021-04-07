@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import '../Styles/BmiStyle.css';
+import '../CSS/BmiStyle.css';
 import Button from "./Button";
 
 const CalcBMI = () => {

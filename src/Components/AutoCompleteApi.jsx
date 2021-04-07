@@ -1,9 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import axios from 'axios';
 import Button from './Button';
-import '../Styles/DataStyle.css';
-
-
+import '../CSS/DataStyle.css';
 
 const AutoCompleteApi = ({q}) => {
 

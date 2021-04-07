@@ -4,6 +4,7 @@ import Homepage from './Components/Homepage';
 import CalcBMI from "./Components/CalcBMI.jsx";
 import Header from "./Components/Header.jsx";
 import Resipes from "./Components/Recipes.jsx";
+import './App.css';
 
 
 function App() {

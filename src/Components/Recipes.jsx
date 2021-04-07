@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import axios from 'axios';
 import data from "./RecipesHealthDietData";
-import '../Styles/RecipesStyle.css';
+import '../CSS/RecipesStyle.css';
 import Button from "./Button";
 import RecipeCard from "./RecipeCard";
 
@@ -18,7 +18,6 @@ const Recipes =()=>{
         console.log("getApi");
         try{
             const response = await axios.get(`https://api.edamam.com/search?q=${foodQuery}&app_id=6504a240&app_key=1aa89bcf5cd432ba57341d0194528787&calories=${caloriesMax}&health=${health}&ingr=${maxIngredients}`);
-            console.log(response.data.hits);
             setRecipesArr(response.data.hits);  
         }catch(err){
                 console.log(err); 
