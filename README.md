@@ -13,7 +13,7 @@
 * Git
 * GitHub
 * React
-*API
+* API
 
 ## Approach Taken
 I started my app by checking out existing apps related to my app. Search for a suitable API, explore the API. Understand the relationships between the various functions, create appropriate components and the relationship between them.
