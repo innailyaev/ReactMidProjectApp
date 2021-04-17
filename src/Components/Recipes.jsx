@@ -25,6 +25,7 @@ const Recipes =()=>{
         try{
             const response = await axios.get(`https://api.edamam.com/search?from=${firstIndex}&to=${lastIndex}&q=${foodQuery}&app_id=6504a240&app_key=1aa89bcf5cd432ba57341d0194528787&calories=${caloriesMax}&health=${health}&ingr=${maxIngredients}`);
             setRecipesArr(response.data.hits);
+            console.log(response.data.hits);
             setTotalRecipes(20);
         }catch(err){
                 console.log(err); 

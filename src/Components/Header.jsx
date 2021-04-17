@@ -24,7 +24,7 @@ const Header =()=>{
                <Menu.Item name="bmi"><Link to="/bmi" >BMI</Link></Menu.Item>
                <Menu.Item name="recipes"><Link to="/recipes" >Recipes</Link></Menu.Item>  
                <Menu.Item name="login"><p onClick={togglePop} className="loginMenu">Login</p></Menu.Item>
-               <Menu.Item name="logo"><div className="logo"></div></Menu.Item>
+               <Menu.Item name="logo"><Link to="/" ><div className="logo"></div></Link></Menu.Item>
             </Menu>
             {
             popUpSeen ? <MyPopUpWindow toggle={togglePop} content={<MainLogIn/>}/> : null

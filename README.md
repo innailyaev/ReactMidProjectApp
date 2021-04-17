@@ -31,7 +31,7 @@ Display data in a graph.
 ![plot](./src/Assets/mySite.png)
 
 
-[link to the site](https://react-mid-project.netlify.app/)
+[link to the site](https://reactproject-eatright.netlify.app)
 
 (https://app.diagrams.net/#G1FvAlIxb0th_e4Qfj_jxAEKorcyjQYomy).
 
